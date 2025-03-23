@@ -1,0 +1,100 @@
+/* src/styles/services.css */
+.services-section {
+  padding: 2rem;
+  text-align: start;
+  cursor: pointer;
+  color: white;
+  max-width: 600px; /* Limit width to 600px */
+  margin: 0 auto; /* Center the section */
+  position: relative; /* Ensure it doesn't overlap with sidebar or profile card */
+  z-index: 1; /* Bring content above the background */
+}
+
+.services-button {
+  width: fit-content;
+  background: transparent;
+  border: 2px solid #22D3EE;
+  color: #22D3EE;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.services-button:hover {
+  background: #22D3EE;
+  color: #fff;
+}
+
+.services-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+}
+
+.services-heading .highlight {
+  color: #22D3EE; /* Color for "Specializations" */
+}
+
+/* Cards Container */
+.services-cards {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 1.5rem; /* Space between cards */
+}
+.Services_row{
+    display: flex;
+    gap: 16px;
+}
+/* First Card (Horizontal) */
+.service-card:first-child {
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+/* Second and Third Cards (Row Position) */
+.service-card:nth-child(2),
+.service-card:nth-child(3) {
+  grid-column: span 1; /* Each card takes half the width */
+}
+
+/* Fourth Card (Horizontal) */
+.service-card:nth-child(4) {
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+/* Service Card Styles */
+.service-card {
+  border: 1px solid #737373; /* Grey border */
+  border-radius: 16px; /* Rounded corners */
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: #22D3EE; /* Change border color on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.service-title {
+  display: flex;
+  justify-content: space-between; /* Space between title and icon */
+  align-items: center; /* Vertically center align */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.service-icon {
+  color: #22D3EE; /* Icon color */
+  font-size: 1.5rem; /* Icon size */
+}
+
+.service-description {
+  font-size: 1rem;
+  color: grey;
+  line-height: 1.6;
+}

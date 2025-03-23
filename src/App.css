@@ -1,0 +1,7 @@
+/* src/App.css */
+.App {
+  padding-left: 300px; /* Adjust based on profile card width */
+  padding-right: 100px; /* Adjust based on sidebar width */
+  background-color: #000; /* Match the background color */
+  color: white;
+}

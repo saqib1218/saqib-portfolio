@@ -1,0 +1,112 @@
+/* src/styles/profileCard.css */
+.profile-card {
+    position: fixed;
+    top: 6%;
+    left: 0;
+    margin: 2rem;
+    padding: 1.5rem;
+    background-color: #262626;
+    border: 1px solid #737373;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    border: 2px solid #737373;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-info {
+    margin-bottom: 1rem;
+  }
+  
+  .profile-email,
+  .profile-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .icon {
+    color: #737373;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer !important;
+  }
+  
+  .profile-email:hover,
+  .profile-phone:hover {
+    color: #22D3EE !important;
+  }
+  
+  .profile-email:hover .icon,
+  .profile-phone:hover .icon {
+    color: #22D3EE;
+    transform: scale(1.2);
+    text-shadow: 0 0 8px #22D3EE;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-icons .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #737373;
+  }
+  
+  .social-icons .social-icon:hover {
+    background-color: #22D3EE; /* Background color on hover */
+    transform: translateY(-5px); /* Bubble up effect */
+    box-shadow: 0 4px 8px rgba(34, 211, 238, 0.3); /* Shadow on hover */
+  }
+  
+  .social-icons .social-icon:hover .icon {
+    color: white; /* Icon color on hover */
+    transform: scale(1.2); /* Increase icon size on hover */
+  }
+  
+  .hire-me-button {
+    width: -webkit-fill-available;
+    background-color: #22D3EE;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hire-me-button:hover {
+    background-color: #1cb4d6;
+    box-shadow: 0 0 10px #22D3EE;
+  }

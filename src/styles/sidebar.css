@@ -1,0 +1,44 @@
+/* src/sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    right: 20px; /* Spacing from the right edge */
+    transform: translateY(-50%); /* Center vertically */
+    width: 60px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626; /* Background color */
+    border: 1px solid #737373; /* Grey border */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 10px 0; /* Padding for top and bottom */
+  }
+  
+  .sidebar-icon {
+    color: #737373; /* Grey color for icons */
+    margin: 15px 0; /* Spacing between icons */
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .sidebar-icon.active {
+    color: #22D3EE; /* Active icon color */
+    background-color: rgba(34, 211, 238, 0.1); /* Light background for active icon */
+    transform: scale(1.1); /* Slightly increase size for active icon */
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3); /* Glow effect for active icon */
+  }
+  
+  .sidebar-icon:hover {
+    color: #22D3EE; /* Icon color on hover */
+    background-color: rgba(34, 211, 238, 0.1); /* Light background on hover */
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.3); /* Glow effect on hover */
+  } 
