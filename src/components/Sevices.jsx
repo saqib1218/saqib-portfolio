@@ -41,7 +41,7 @@ const Services = () => {
         </div>
         <div className="service-card">
           <div className="service-title">
-            Frontend Developments
+            Frontend Development
             <FaPaintBrush className="service-icon" />
           </div>
           <p className="service-description">
