@@ -1,33 +1,5 @@
-/* src/about.css */
-@keyframes bubbleUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
- 
-  .about-section.animate .about-button {
-    animation: bubbleUp 0.8s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-  
-  .about-section.animate .about-heading {
-    animation: bubbleUp 0.8s ease-out 0.4s forwards;
-    opacity: 0;
-  }
-  
-  .about-section.animate .about-description {
-    animation: bubbleUp 0.8s ease-out 0.6s forwards;
-    opacity: 0;
-  }
-  
-  /* Rest of your CSS */
-  .about-section {
+/* Rest of your CSS */
+.about-section {
     padding: 2rem;
     text-align: start; 
     background-color: #262626; 

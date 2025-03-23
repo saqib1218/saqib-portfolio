@@ -1,58 +1,60 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion'; // Import Framer Motion
 import '../styles/about.css'; // Import the CSS file
 
 const About = () => {
-  const aboutRef = useRef(null); // Ref for the about section
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5, // Delay between child animations
+      },
+    },
+  };
 
-  useEffect(() => {
-    const aboutElement = aboutRef.current;
-
-    // Intersection Observer callback
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add animation classes when the about section is in view
-          aboutElement.classList.add('animate');
-        } else {
-          // Remove animation classes when the about section is out of view
-          aboutElement.classList.remove('animate');
-        }
-      });
-    };
-
-    // Intersection Observer options
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Trigger when 50% of the section is visible
-    };
-
-    // Create the Intersection Observer
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe the about element
-    if (aboutElement) {
-      observer.observe(aboutElement);
-    }
-
-    // Cleanup the observer on unmount
-    return () => {
-      if (aboutElement) {
-        observer.unobserve(aboutElement);
-      }
-    };
-  }, []);
+  const childVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.2, // Increase duration for slower animations
+        ease: "easeOut", // Smooth easing
+      },
+    },
+  };
 
   return (
-    <section id="about" className="about-section" ref={aboutRef}>
-      <button className="about-button">About</button>
-      <h1 className="about-heading">
-        Every great design begins with an even <span className="highlight">better story</span>
-      </h1>
-      <p className="about-description">
+    <motion.section
+      id="about"
+      className="about-section"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.5 }} // Trigger animation every time
+    >
+      <motion.button
+        className="about-button"
+        variants={childVariants}
+      >
+        About
+      </motion.button>
+      <motion.h1
+        className="about-heading"
+        variants={childVariants}
+      >
+        Every great design begins with an even{' '}
+        <span className="highlight">better story</span>
+      </motion.h1>
+      <motion.p
+        className="about-description"
+        variants={childVariants}
+      >
         Since beginning my journey as a freelance designer nearly 8 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops one design problem at a time.
-      </p>
-    </section>
+      </motion.p>
+    </motion.section>
   );
 };
 
