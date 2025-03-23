@@ -1,0 +1,101 @@
+/* src/skills.css */
+@keyframes bubbleUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .skills-section.animate .skill-button {
+    animation: bubbleUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+  
+  .skills-section.animate .skill-heading {
+    animation: bubbleUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+  
+  .skills-section.animate .card-container {
+    animation: bubbleUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+  
+  /* Rest of your CSS */
+  .skills-section {
+    padding: 2rem;
+    text-align: start; /* Left-align text */
+
+    color: white;
+    max-width: 600px; /* Limit width */
+    margin: 0 auto; /* Center the container */
+    position: relative;
+    z-index: 1;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align content to the left */
+  }
+  
+  .skill-button {
+    width: fit-content;
+    background: transparent;
+    border: 2px solid #22D3EE;
+    color: #22D3EE;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .skill-button:hover {
+    background: #22D3EE;
+    color: #fff;
+  }
+  
+  .skill-heading {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 40px;
+  }
+  
+  .skill-heading .skill-text {
+    color: #22D3EE;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    width: 180px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card img {
+    max-width: 100px;
+    max-height: 100px;
+  }

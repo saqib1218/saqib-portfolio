@@ -59,11 +59,12 @@ const Sidebar = () => {
       <a href="#experience" className={`sidebar-icon ${activeSection === 'experience' ? 'active' : ''}`}>
         <FaBriefcase size={24} />
       </a>
-      <a href="#skills" className={`sidebar-icon ${activeSection === 'skills' ? 'active' : ''}`}>
-        <FaCode size={24} />
-      </a>
+     
       <a href="#services" className={`sidebar-icon ${activeSection === 'services' ? 'active' : ''}`}>
         <FaCogs size={24} />
+      </a>
+      <a href="#skills" className={`sidebar-icon ${activeSection === 'skills' ? 'active' : ''}`}>
+        <FaCode size={24} />
       </a>
       <a href="#projects" className={`sidebar-icon ${activeSection === 'projects' ? 'active' : ''}`}>
         <FaProjectDiagram size={24} />
