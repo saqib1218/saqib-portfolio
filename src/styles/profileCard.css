@@ -1,8 +1,9 @@
 /* src/styles/profileCard.css */
 .profile-card {
     position: fixed;
-    top: 6%;
-    left: 0;
+    transform: translateY(-50%); 
+    top: 50%;
+    left: 20px;
     margin: 2rem;
     padding: 1.5rem;
     background-color: #262626;
