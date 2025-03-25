@@ -56,7 +56,7 @@ const Projects = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{  margin: "-100px",amount:0.3}}
+        viewport={{  margin: "-100px"}}
         variants={containerVariants}
         className="projects-container"
       >
