@@ -20,7 +20,7 @@ const About = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1.2, // Increase duration for slower animations
+        duration: 0.6, // Increase duration for slower animations
         ease: "easeOut", // Smooth easing
       },
     },
@@ -33,7 +33,7 @@ const About = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.5 }} // Trigger animation every time
+      viewport={{ amount: 0.3 }} // Trigger animation every time
     >
       <motion.button
         className="about-button"

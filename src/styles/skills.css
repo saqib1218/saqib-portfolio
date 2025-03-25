@@ -18,21 +18,23 @@
   background: transparent;
   border: 2px solid #22D3EE;
   color: #22D3EE;
-  padding: 10px 25px;
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 30px;
+  transition: all 0.3s ease;
+  border-radius: 20px;
   margin-bottom: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
+}
+.skill-button:hover {
+  background: #22D3EE;
+  color: #fff;
 }
 
 .skill-heading {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
   color: white;
-  margin-bottom: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
 }
 
 .skill-heading .skill-text {
