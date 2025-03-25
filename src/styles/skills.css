@@ -1,43 +1,16 @@
-/* src/skills.css */
-@keyframes bubbleUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.skills-section.animate .skill-button {
-  animation: bubbleUp 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-}
-
-.skills-section.animate .skill-heading {
-  animation: bubbleUp 0.8s ease-out 0.4s forwards;
-  opacity: 0;
-}
-
-.skills-section.animate .card-container {
-  animation: bubbleUp 0.8s ease-out 0.6s forwards;
-  opacity: 0;
-}
-
-/* Rest of your CSS */
 .skills-section {
-  padding: 2rem;
-  text-align: start; /* Left-align text */
+  padding: 4rem 2rem;
+  text-align: start;
   color: white;
-  max-width: 600px; /* Limit width */
-  margin: 0 auto; /* Center the container */
+  max-width: 600px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: flex-start; /* Align content to the left */
+  overflow: hidden;
+}
+
+.skills-container {
+  width: 100%;
 }
 
 .skill-button {
@@ -45,52 +18,81 @@
   background: transparent;
   border: 2px solid #22D3EE;
   color: #22D3EE;
-  padding: 10px 20px;
+  padding: 10px 25px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 20px;
+  border-radius: 30px;
   margin-bottom: 20px;
-}
-
-.skill-button:hover {
-  background: #22D3EE;
-  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .skill-heading {
-  font-size: 48px;
+  font-size: 3.5rem;
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .skill-heading .skill-text {
   color: #22D3EE;
+  display: inline-block;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 25px;
+  padding: 1rem 0;
 }
 
 .card {
   cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 60px;
-  width: 130px;
-  height: 200px;
+  border: 1px solid rgba(204, 204, 204, 0.2);
+  border-radius: 20px;
+  width: 150px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2a2a2a;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(34, 211, 238, 0.1),
+    transparent
+  );
+  transform: rotate(30deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(30deg) translate(-10%, -10%);
+  }
+  100% {
+    transform: rotate(30deg) translate(10%, 10%);
+  }
 }
 
 .card-content {
@@ -98,17 +100,66 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  padding: 20px;
+  z-index: 1;
 }
 
 .card img {
-  max-width: 80px;
-  max-height: 80px;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
 }
 
 .skill-name {
   color: white;
-  font-size: 16px;
+  font-size: 1.1rem;
   margin: 0;
   text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skill-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    width: 120px;
+    height: 150px;
+  }
+  
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 3rem 1rem;
+  }
+  
+  .card-container {
+    gap: 15px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 130px;
+  }
+  
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
 }
