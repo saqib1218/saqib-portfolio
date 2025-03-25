@@ -4,23 +4,29 @@ import {
   FaUser,
   FaBriefcase,
   FaCode,
-  FaCogs, // Icon for Services
+  FaCogs,
   FaProjectDiagram,
   FaEnvelope,
 } from 'react-icons/fa';
-import '../styles/sidebar.css'; // Import the CSS file
+import '../styles/sidebar.css';
 
 const Sidebar = () => {
-  const [activeSection, setActiveSection] = useState('home'); // Track active section
+  const [activeSection, setActiveSection] = useState('home');
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Function to handle scroll and update active section
   useEffect(() => {
-    const sections = ['home', 'about', 'experience', 'skills', 'services', 'projects', 'contact'];
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1280);
+    };
 
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    const sections = ['home', 'about', 'experience', 'skills', 'services', 'projects', 'contact'];
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // Trigger when 50% of the section is visible
+      threshold: 0.5,
     };
 
     const observerCallback = (entries) => {
@@ -42,6 +48,7 @@ const Sidebar = () => {
     });
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       observers.forEach((observer) => {
         if (observer) observer.disconnect();
       });
@@ -49,28 +56,35 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isMobile ? 'mobile' : ''}`}>
       <a href="#home" className={`sidebar-icon ${activeSection === 'home' ? 'active' : ''}`}>
-        <FaHome size={24} />
+        <FaHome size={isMobile ? 20 : 24} />
+        {isMobile && <span>Home</span>}
       </a>
       <a href="#about" className={`sidebar-icon ${activeSection === 'about' ? 'active' : ''}`}>
-        <FaUser size={24} />
+        <FaUser size={isMobile ? 20 : 24} />
+        {isMobile && <span>About</span>}
       </a>
       <a href="#experience" className={`sidebar-icon ${activeSection === 'experience' ? 'active' : ''}`}>
-        <FaBriefcase size={24} />
+        <FaBriefcase size={isMobile ? 20 : 24} />
+        {isMobile && <span>Experience</span>}
       </a>
-     
       <a href="#services" className={`sidebar-icon ${activeSection === 'services' ? 'active' : ''}`}>
-        <FaCogs size={24} />
+        <FaCogs size={isMobile ? 20 : 24} />
+        {isMobile && <span>Services</span>}
       </a>
       <a href="#skills" className={`sidebar-icon ${activeSection === 'skills' ? 'active' : ''}`}>
-        <FaCode size={24} />
+        <FaCode size={isMobile ? 20 : 24} />
+        {isMobile && <span>Skills</span>}
       </a>
+     
       <a href="#projects" className={`sidebar-icon ${activeSection === 'projects' ? 'active' : ''}`}>
-        <FaProjectDiagram size={24} />
+        <FaProjectDiagram size={isMobile ? 20 : 24} />
+        {isMobile && <span>Projects</span>}
       </a>
       <a href="#contact" className={`sidebar-icon ${activeSection === 'contact' ? 'active' : ''}`}>
-        <FaEnvelope size={24} />
+        <FaEnvelope size={isMobile ? 20 : 24} />
+        {isMobile && <span>Contact</span>}
       </a>
     </div>
   );

@@ -1,11 +1,23 @@
-import React from 'react';
-import '../styles/profileCard.css'; // Import the CSS file
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaInstagram, FaGlobe } from 'react-icons/fa'; // Import icons
+import React, { useState, useEffect } from 'react';
+import '../styles/profileCard.css';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaInstagram, FaGlobe } from 'react-icons/fa';
 import saqibImage from '../assets/saqib.jpeg';
 
 const ProfileCard = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1280);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="profile-card">
+    <div className={`profile-card ${isMobile ? 'mobile' : ''}`}>
       <h2 className="profile-name">Saqib Iftikhar</h2>
       <img src={saqibImage} alt="Saqib Iftikhar" className="profile-image" />
       <div className="profile-info">

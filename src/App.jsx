@@ -12,8 +12,9 @@ import ProfileCard from './components/ProfileCard';
 function App() {
   return (
     <div className="App">
+    <Sidebar />
+    <ProfileCard />
     
-      
       <Header />
       <About />
      
@@ -22,8 +23,7 @@ function App() {
       <Skills />
       {/* <Projects /> */}
       {/* <Contact /> */}
-      <ProfileCard />
-      <Sidebar />
+   
     </div>
   );
 }

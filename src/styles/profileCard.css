@@ -1,113 +1,130 @@
-/* src/styles/profileCard.css */
+/* Base Styles (applies to both desktop and mobile) */
 .profile-card {
+  background-color: #262626;
+  border: 1px solid #737373;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  border: 2px solid #737373;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.profile-info {
+  margin-bottom: 1rem;
+}
+
+.profile-email,
+.profile-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.icon {
+  color: #737373;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  color: #737373;
+}
+
+.hire-me-button {
+  width: 100%;
+  background-color: #22D3EE;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Desktop Positioning */
+@media (min-width: 1280px) {
+  .profile-card {
     position: fixed;
-    transform: translateY(-50%); 
     top: 50%;
     left: 20px;
-    margin: 2rem;
-    padding: 1.5rem;
-    background-color: #262626;
-    border: 1px solid #737373;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 250px;
+    transform: translateY(-50%);
+    width: 250px;
   }
+ 
   
-  .profile-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 1rem;
+}
+
+/* Mobile Positioning */
+@media (max-width: 1279px) {
+  .profile-card {
+    
+    top: 0;
+    width: fit-content;
+ 
+    margin: 0 auto;
   }
-  
-  .profile-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 20px;
-    border: 2px solid #737373;
-    margin-bottom: 1rem;
-  }
-  
-  .profile-info {
-    margin-bottom: 1rem;
-  }
-  
-  .profile-email,
-  .profile-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    color: white;
-    margin: 0.5rem 0;
-    transition: all 0.3s ease;
-  }
-  
-  .icon {
-    color: #737373;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    cursor: pointer !important;
-  }
-  
-  .profile-email:hover,
-  .profile-phone:hover {
-    color: #22D3EE !important;
-  }
-  
-  .profile-email:hover .icon,
-  .profile-phone:hover .icon {
-    color: #22D3EE;
-    transform: scale(1.2);
-    text-shadow: 0 0 8px #22D3EE;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .social-icons .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: transparent;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: #737373;
-  }
-  
-  .social-icons .social-icon:hover {
-    background-color: #22D3EE; /* Background color on hover */
-    transform: translateY(-5px); /* Bubble up effect */
-    box-shadow: 0 4px 8px rgba(34, 211, 238, 0.3); /* Shadow on hover */
-  }
-  
-  .social-icons .social-icon:hover .icon {
-    color: white; /* Icon color on hover */
-    transform: scale(1.2); /* Increase icon size on hover */
-  }
-  
   .hire-me-button {
-    width: -webkit-fill-available;
-    background-color: #22D3EE;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: fit-content;
+  
   }
   
-  .hire-me-button:hover {
-    background-color: #1cb4d6;
-    box-shadow: 0 0 10px #22D3EE;
-  }
+}
+
+/* Hover Effects */
+.profile-email:hover,
+.profile-phone:hover {
+  color: #22D3EE;
+}
+
+.profile-email:hover .icon,
+.profile-phone:hover .icon {
+  color: #22D3EE;
+}
+
+.social-icon:hover {
+  background-color: #22D3EE;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hire-me-button:hover {
+  background-color: #1cb4d6;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
