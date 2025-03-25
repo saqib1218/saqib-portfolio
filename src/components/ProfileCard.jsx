@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/profileCard.css';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaInstagram, FaGlobe } from 'react-icons/fa';
-import saqibImage from '../assets/saqib.jpeg';
+import saqibImage from '../assets/saqib-image.png';
 
 const ProfileCard = () => {
   const [isMobile, setIsMobile] = useState(false);
