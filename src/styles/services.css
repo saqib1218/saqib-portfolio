@@ -98,3 +98,15 @@
   color: grey;
   line-height: 1.6;
 }
+@media (max-width: 1279px) {
+  .services-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Services_row{
+    display: flex;
+    flex-direction: column;
+  }
+
+}

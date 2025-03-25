@@ -1,4 +1,4 @@
-/* Desktop Styles */
+/* Base Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 50%;
@@ -52,11 +52,11 @@
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
 }
 
-/* Mobile Styles */
+/* Medium Mobile (1280px to 720px) */
 @media (max-width: 1279px) {
-  .sidebar {
+  .sidebar.mobile {
     position: sticky;
-    top: 70px;
+   top: 0;
     right: 0;
     width: 100%;
     height: auto;
@@ -68,9 +68,10 @@
     border: none;
     border-bottom: 1px solid #333;
     transform: none;
+    margin-bottom: 20px;
   }
 
-  .sidebar-icon {
+  .sidebar.mobile .sidebar-icon {
     margin: 0 5px;
     width: auto;
     height: auto;
@@ -79,12 +80,84 @@
     gap: 5px;
   }
 
-  .sidebar-icon span {
+  .sidebar.mobile .sidebar-icon span {
     display: inline;
+  }
+}
+
+/* Small Mobile (< 720px) */
+@media (max-width: 719px) {
+  .mobile-nav-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+  }
+
+  .hamburger-button {
+    background: transparent;
+    border: none;
+    color: #737373;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-button:hover {
+    color: #22D3EE;
+  }
+
+  .mobile-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #262626;
+    border-bottom: 1px solid #333;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .mobile-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: #737373;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-item:hover,
+  .mobile-menu-item.active {
+    color: #22D3EE;
+    background-color: rgba(34, 211, 238, 0.1);
+  }
+
+  .mobile-menu-icon {
+    margin-right: 10px;
+    font-size: 1rem;
   }
 
   .sidebar.mobile {
-    top: 0px; /* Below profile card */
-    margin-bottom: 20px;
+    display: none;
   }
 }
